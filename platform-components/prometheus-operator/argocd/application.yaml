@@ -1,0 +1,43 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+
+  name: dpf-prometheus-operator
+
+  namespace: argocd
+
+
+spec:
+
+  project: dpf-platform
+
+
+  source:
+
+    repoURL: https://github.com/romain617/devops-platform.git
+
+    targetRevision: main
+
+    path: platform-components/prometheus-operator
+
+
+  destination:
+
+    server: https://kubernetes.default.svc
+
+    namespace: monitoring
+
+
+  syncPolicy:
+
+    automated:
+
+      prune: true
+
+      selfHeal: true
+
+
+    syncOptions:
+
+      - CreateNamespace=true
