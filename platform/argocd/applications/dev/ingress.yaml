@@ -4,7 +4,7 @@ metadata:
   name: dpf-ingress
   namespace: argocd
 spec:
-  project: dpf-platform
+  project: dpf-project
 
   source:
     repoURL: https://github.com/romain617/devops-platform.git
