@@ -1,0 +1,8 @@
+resources:
+
+- manifests/namespace.yaml
+- manifests/serviceaccount.yaml
+- manifests/rbac.yaml
+- manifests/configmap.yaml
+- manifests/deployment.yaml
+- manifests/storageclass.yaml

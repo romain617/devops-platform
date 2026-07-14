@@ -1,0 +1,47 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+
+  name: dpf-root-dev
+
+  namespace: argocd
+
+
+spec:
+
+
+  project: dpf-platform
+
+
+  source:
+
+    repoURL: https://github.com/romain617/devops-platform.git
+
+    targetRevision: main
+
+    path: platform/argocd/applications/dev
+
+
+
+  destination:
+
+    server: https://kubernetes.default.svc
+
+    namespace: argocd
+
+
+
+  syncPolicy:
+
+    automated:
+
+      prune: true
+
+      selfHeal: true
+
+
+    syncOptions:
+
+    - CreateNamespace=true
+
