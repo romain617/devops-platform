@@ -10,7 +10,7 @@ metadata:
 
 spec:
 
-  project: dpf-platform
+  project: dpf-project
 
 
   source:
