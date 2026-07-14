@@ -1,8 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+commonAnnotations:
+  argocd.argoproj.io/sync-options: Replace=true
+
 resources:
-  - namespace.yaml
   - 0alertmanagerConfigCustomResourceDefinition.yaml
   - 0alertmanagerCustomResourceDefinition.yaml
   - 0podmonitorCustomResourceDefinition.yaml
