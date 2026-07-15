@@ -5,8 +5,12 @@ kind: Kustomization
 resources:
 
   - namespace.yaml
-
   - apiservice.yaml
   - deployment.yaml
   - rbac.yaml
   - service.yaml
+
+
+patches:
+
+  - path: patch-deployment.yaml
