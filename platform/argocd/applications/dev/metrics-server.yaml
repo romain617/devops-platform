@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+
+metadata:
+
+  name: dpf-metrics-server
+
+  namespace: argocd
+
+
+spec:
+
+  project: dpf-project
+
+
+  source:
+
+    repoURL: https://github.com/romain617/devops-platform.git
+
+    targetRevision: main
+
+    path: platform-components/metrics-server
+
+
+  destination:
+
+    server: https://kubernetes.default.svc
+
+    namespace: metrics-server
+
+
+  syncPolicy:
+
+    automated:
+
+      prune: true
+
+      selfHeal: true
+
+
+    syncOptions:
+
+      - CreateNamespace=true
+
+      - ServerSideApply=true
+
+      - Replace=true
